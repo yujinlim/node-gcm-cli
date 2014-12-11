@@ -1,4 +1,4 @@
-Node GCM CLI [![Build Status](http://img.shields.io/travis/yujinlim/node-gcm-cli.svg?style=flat-square)](https://travis-ci.org/yujinlim/node-gcm-cli) [![Dependency Status](http://img.shields.io/gemnasium/yujinlim/node-gcm-cli.svg?style=flat-square)](https://gemnasium.com/yujinlim/node-gcm-cli) [![Coverage Status](http://img.shields.io/coveralls/yujinlim/node-gcm-cli.svg?style=flat-square)](https://coveralls.io/r/yujinlim/node-gcm-cli)
+Node GCM CLI [![Build Status](http://img.shields.io/travis/yujinlim/node-gcm-cli.svg?style=flat-square)](https://travis-ci.org/yujinlim/node-gcm-cli) [![Dependency Status](http://img.shields.io/gemnasium/yujinlim/node-gcm-cli.svg?style=flat-square)](https://gemnasium.com/yujinlim/node-gcm-cli) [![Coverage Status](https://coveralls.io/repos/yujinlim/node-gcm-cli/badge.png)](https://coveralls.io/r/yujinlim/node-gcm-cli)
 ============
 
 NodeJs CLI to test gcm on your android application
