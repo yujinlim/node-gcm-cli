@@ -30,8 +30,11 @@
     "url": "https://github.com/yujinlim/node-gcm-cli.git"
   },
   "devDependencies": {
-    "mocha": "~2.0.1",
     "chai": "~1.10.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.5",
+    "mocha": "~2.0.1",
+    "mocha-lcov-reporter": "0.0.1",
     "proxyquire": "~1.1.0"
   },
   "bugs": {
