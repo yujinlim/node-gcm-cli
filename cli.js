@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+var version = require('package.json').version;
 var program = require('commander'),
   gcm = require('./lib/gcmTest');
 
@@ -8,9 +9,9 @@ function list(val) {
 }
 
 program
-  .version('0.0.1')
+  .version(version)
   .option('-m, --message <message>', 'message that you wish to send')
-  .option('-k,--key <key>', 'google api key')
+  .option('-k, --key <key>', 'google api key')
   .option('-r, --registrationids <ids>', 'registrationids, if more than one', list);
 
 program.parse(process.argv);

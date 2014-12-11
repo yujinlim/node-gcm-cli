@@ -1,10 +1,13 @@
 {
   "name": "gcm-test",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Test GCM, push notification",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
+  },
+  "bin": {
+    "gcm": "cli.js"
   },
   "keywords": [
     "gcm",
@@ -14,7 +17,7 @@
     "command",
     "line"
   ],
-  "author": "Yu Jin",
+  "author": "Yu Jin <adamlyj89@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "node-gcm": "~0.9.12",
@@ -22,9 +25,16 @@
     "lodash.isstring": "~2.4.1",
     "lodash.isempty": "~2.4.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yujinlim/node-gcm-cli.git"
+  },
   "devDependencies": {
     "mocha": "~2.0.1",
     "chai": "~1.10.0",
     "proxyquire": "~1.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/yujinlim/node-gcm-cli/issues"
   }
 }
