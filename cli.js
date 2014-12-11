@@ -22,4 +22,4 @@ if (program.message && program.key && program.registrationids) {
   }, function(err, response){
     console.log(err, response);
   });
-} 
+}
