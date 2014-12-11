@@ -1,6 +1,6 @@
 {
   "name": "gcm-test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Test GCM, push notification",
   "main": "index.js",
   "scripts": {
