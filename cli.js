@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var version = require('package.json').version;
+var version = require('./package.json').version;
 var program = require('commander'),
   gcm = require('./lib/gcmTest');
 
