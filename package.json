@@ -1,0 +1,30 @@
+{
+  "name": "gcm-test",
+  "version": "0.0.0",
+  "description": "Test GCM, push notification",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "gcm",
+    "push",
+    "notification",
+    "test",
+    "command",
+    "line"
+  ],
+  "author": "Yu Jin",
+  "license": "ISC",
+  "dependencies": {
+    "node-gcm": "~0.9.12",
+    "commander": "~2.5.0",
+    "lodash.isstring": "~2.4.1",
+    "lodash.isempty": "~2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "chai": "~1.10.0",
+    "proxyquire": "~1.1.0"
+  }
+}
