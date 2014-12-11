@@ -5,7 +5,7 @@ NodeJs CLI to test gcm on your android application
 
 ## Installation
 ```
-npm install gcm-test
+$ npm install gcm-test
 ```
 ## Usage
 ```Javascript
@@ -20,7 +20,17 @@ gcmTest('hello world', ['123'], {
 ```
 ## CLI
 ```
-npm install -g gcm-test
+$ npm install -g gcm-test
 
-gcm --help
+$ gcm --help
+
+  Usage: cli [options]
+
+  Options:
+
+    -h, --help                   output usage information
+    -V, --version                output the version number
+    -m, --message <message>      message that you wish to send
+    -k, --key <key>              google api key
+    -r, --registrationids <ids>  registrationids, if more than one
 ```
