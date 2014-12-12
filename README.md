@@ -47,7 +47,6 @@ $ gcm --help
 ```
 
 ## Todos
-- [ ] pass message as object
 - [ ] allows to pass other flags for gcm
 
 ## License
