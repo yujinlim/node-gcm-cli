@@ -35,6 +35,10 @@ $ gcm --help
     -r, --registrationids <ids>  registrationids, if more than one
 ```
 
+## Todos
+- [ ] pass message as object
+- [ ] allows to pass other flags for gcm
+
 ## License
 The MIT License (MIT)
 
