@@ -76,5 +76,19 @@ describe('properties on node gcm', function() {
 
       gcmTest(dummyMessage, dummyRegistrationIds, dummyConfig);
     });
+
+    it('expect message to accept message as object', function() {
+      var message = {
+        message: 'value',
+        path: 'path'
+      };
+      nodeGcm = {
+        Message: function(x) {
+          expect(x.data).to.deep.equal(message);
+        }
+      }
+
+      gcmTest(message, dummyRegistrationIds, dummyConfig);
+    });
   });
 });
