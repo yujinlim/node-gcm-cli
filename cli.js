@@ -20,10 +20,10 @@ function toObject(val) {
 
 program
   .version(version)
-  .option('-m, --message <message>', 'message that you wish to send')
+  .option('-m, --message <message>', 'message that you wish to send (string or key-value), eg: --message="message:this is test,path:landing"')
   .option('-k, --key <key>', 'google api key')
   .option('-r, --registrationids <ids>', 'comma separated ids, if more than one', list)
-  .option('-j, --json', 'message is json string', false);
+  .option('-j, --json', 'message is json string (boolean), default to false', false);
 
 program.parse(process.argv);
 
