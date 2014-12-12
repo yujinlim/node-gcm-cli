@@ -1,6 +1,8 @@
 var chai = require('chai'),
   expect = chai.expect;
 
+var noop = require('lodash.noop');
+
 var dummyMessage = 'message';
 var dummyConfig = {
   apiKey: '123'
@@ -37,6 +39,12 @@ describe('validations', function() {
       return gcmTest(dummyMessage, null, dummyConfig);
     }).to.throw(/no registration ids found/);
   });
+
+  it('should expecting callback', function() {
+    expect(function() {
+      return gcmTest(dummyMessage, dummyRegistrationIds, dummyConfig);
+    }).to.throw(/expecting callback/);
+  });
 });
 
 describe('properties on node gcm', function() {
@@ -58,7 +66,20 @@ describe('properties on node gcm', function() {
         'gcm': nodeGcm
       });
 
-      gcmTest(dummyMessage, dummyRegistrationIds, dummyConfig);
+      gcmTest(dummyMessage, dummyRegistrationIds, dummyConfig, noop);
+    });
+  });
+
+  describe('expecting callback to return', function() {
+    it('should trigger callback', function(done) {
+      gcmTest = proxyquire('../lib/gcmTest', {
+        'gcm': nodeGcm
+      });
+
+      gcmTest(dummyMessage, dummyRegistrationIds, dummyConfig, function(err, response) {
+        expect(err);
+        done();
+      });
     });
   });
 
@@ -74,7 +95,7 @@ describe('properties on node gcm', function() {
         'gcm': nodeGcm
       });
 
-      gcmTest(dummyMessage, dummyRegistrationIds, dummyConfig);
+      gcmTest(dummyMessage, dummyRegistrationIds, dummyConfig, noop);
     });
 
     it('expect message to accept message as object', function() {
@@ -88,7 +109,7 @@ describe('properties on node gcm', function() {
         }
       }
 
-      gcmTest(message, dummyRegistrationIds, dummyConfig);
+      gcmTest(message, dummyRegistrationIds, dummyConfig, noop);
     });
   });
 });
