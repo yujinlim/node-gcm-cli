@@ -8,15 +8,29 @@ function list(val) {
   return val.split(',');
 }
 
+function toObject(val) {
+  keyvalues = val.split(',');
+  var message = {};
+  keyvalues.forEach(function(v) {
+    var values = v.split(':');
+    message[values[0]] = values[1];
+  });
+  return message;
+}
+
 program
   .version(version)
-  .option('-m, --message <message>', 'message that you wish to send')
+  .option('-m, --message <message>', 'message that you wish to send (string or key-value), eg: --message="message:this is test,path:landing"')
   .option('-k, --key <key>', 'google api key')
-  .option('-r, --registrationids <ids>', 'comma separated ids, if more than one', list);
+  .option('-r, --registrationids <ids>', 'comma separated ids, if more than one', list)
+  .option('-j, --json', 'message is json string (boolean), default to false', false);
 
 program.parse(process.argv);
 
 if (program.message && program.key && program.registrationids) {
+  if (program.json)
+    program.message = toObject(program.message);
+
   gcm(program.message, program.registrationids, {
     apiKey: program.key
   }, function(err, response){

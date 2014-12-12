@@ -17,6 +17,16 @@ gcmTest('hello world', ['123'], {
 }, function(err, response){
   console.log(err, response);
 });
+
+// send data as an object
+gcmTest({
+  message: 'hello world',
+  path: 'landing'
+}, ['123'], {
+  apiKey: '123'
+}, function(err, response){
+  console.log(err, response);
+});
 ```
 ## CLI
 ```
@@ -30,9 +40,10 @@ $ gcm --help
 
     -h, --help                   output usage information
     -V, --version                output the version number
-    -m, --message <message>      message that you wish to send
+    -m, --message <message>      message that you wish to send (string or key-value), eg: --message="message:this is test,path:landing"
     -k, --key <key>              google api key
-    -r, --registrationids <ids>  registrationids, if more than one
+    -r, --registrationids <ids>  comma separated ids, if more than one
+    -j, --json                   message is json string (boolean), default to false
 ```
 
 ## Todos
