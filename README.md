@@ -43,7 +43,12 @@ $ gcm --help
     -m, --message <message>      message that you wish to send (string or key-value), eg: --message="message:this is test,path:landing"
     -k, --key <key>              google api key
     -r, --registrationids <ids>  comma separated ids, if more than one
-    -j, --json                   message is json string (boolean), default to false
+    -j, --json                   message is json string (boolean), default to false. (Required if message are key-values)
+```
+
+## Examples
+```
+$ gcm -m "message:testing,path:landing" -j -k <key> -r <registrationid>
 ```
 
 ## Todos
