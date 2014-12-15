@@ -41,13 +41,21 @@ $ gcm --help
     -h, --help                   output usage information
     -V, --version                output the version number
     -m, --message <message>      message that you wish to send (string or key-value), eg: --message="message:this is test,path:landing"
-    -k, --key <key>              google api key
+    -k, --apiKey <key>           google api key
     -r, --registrationids <ids>  comma separated ids, if more than one
-    -j, --json                   message is json string (boolean), default to false
+    -j, --json                   message is json string (default to false)
+    -c, --collapseKey <key>      collapse key for android
+    -d, --delayWhileIdle         `If the device is connected but idle, the message will still be delivered right away unless the delayWhileIdle flag is set to true`, (default to false)
+    -t, --timeToLive <time>      alive time of this notification
+    -D, --dryRun                 for debug/ test purpose, it allows for sending a message without really sending it (default to false)
 ```
 
-## Todos
-- [ ] allows to pass other flags for gcm
+## Options
+- **apiKey** : google api key
+- **collapseKey** : collapse key for message to send to the same registration id
+- **delayWhileIdle** : if true, message will be send to user when device is active
+- **timeToLive** : maximum period of time for which GCM will store and try to deliver the message (from 0 to 2,419,200 seconds)
+- **dryRun** : for debug/ test purpose, it allows for sending a message without really sending it
 
 ## License
 The MIT License (MIT)
