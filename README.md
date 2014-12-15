@@ -43,11 +43,16 @@ $ gcm --help
     -m, --message <message>      message that you wish to send (string or key-value), eg: --message="message:this is test,path:landing"
     -k, --apiKey <key>           google api key
     -r, --registrationids <ids>  comma separated ids, if more than one
-    -j, --json                   message is json string (default to false)
     -c, --collapseKey <key>      collapse key for android
     -d, --delayWhileIdle         `If the device is connected but idle, the message will still be delivered right away unless the delayWhileIdle flag is set to true`, (default to false)
     -t, --timeToLive <time>      alive time of this notification
     -D, --dryRun                 for debug/ test purpose, it allows for sending a message without really sending it (default to false)
+    -j, --json                   message is json string (boolean), default to false. (Required if message are key-values)
+```
+
+## Examples
+```
+$ gcm -m "message:testing,path:landing" -j -k <key> -r <registrationid>
 ```
 
 ## Options
