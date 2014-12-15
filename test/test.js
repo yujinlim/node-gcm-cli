@@ -5,7 +5,11 @@ var noop = require('lodash.noop');
 
 var dummyMessage = 'message';
 var dummyConfig = {
-  apiKey: '123'
+  apiKey: '123',
+  collapseKey: 'demo',
+  delayWhileIdle: true,
+  dryRun: true,
+  timeToLive: 10
 };
 var dummyRegistrationIds = ['123'];
 
@@ -59,6 +63,25 @@ describe('properties on node gcm', function() {
       nodeGcm = {
         Sender: function(x) {
           expect(x).to.equal(apiKey);
+        }
+      }
+
+      gcmTest = proxyquire('../lib/gcmTest', {
+        'gcm': nodeGcm
+      });
+
+      gcmTest(dummyMessage, dummyRegistrationIds, dummyConfig, noop);
+    });
+  });
+
+  describe('check extra options data', function() {
+    it('expect correct flags on gcm', function() {
+      nodeGcm = {
+        Message: function(x) {
+          expect(x.collapseKey).to.equal(dummyConfig.collapseKey);
+          expect(x.delayWhileIdle).to.equal(dummyConfig.delayWhileIdle);
+          expect(x.dryRun).to.equal(dummyConfig.dryRun);
+          expect(x.timeToLive).to.equal(dummyConfig.timeToLive);
         }
       }
 
