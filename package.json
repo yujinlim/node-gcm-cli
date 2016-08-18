@@ -20,23 +20,23 @@
   "author": "Yu Jin <adamlyj89@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "node-gcm": "~0.9.12",
-    "commander": "~2.5.0",
-    "lodash.isstring": "~2.4.1",
-    "lodash.isempty": "~2.4.1"
+    "commander": "~2.9.0",
+    "lodash.isempty": "~4.4.0",
+    "lodash.isstring": "~4.0.1",
+    "node-gcm": "^0.14.4"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/yujinlim/node-gcm-cli.git"
   },
   "devDependencies": {
-    "chai": "~1.10.0",
+    "chai": "~3.5.0",
     "coveralls": "^2.11.2",
-    "istanbul": "^0.3.5",
-    "mocha": "~2.0.1",
-    "mocha-lcov-reporter": "0.0.1",
-    "proxyquire": "~1.1.0",
-    "lodash.noop": "~2.4.1"
+    "istanbul": "^0.4.4",
+    "mocha": "~3.0.2",
+    "mocha-lcov-reporter": "1.2.0",
+    "proxyquire": "~1.7.10",
+    "lodash.noop": "~3.0.1"
   },
   "bugs": {
     "url": "https://github.com/yujinlim/node-gcm-cli/issues"
