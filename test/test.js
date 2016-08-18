@@ -21,7 +21,7 @@ describe('GCM Test', function() {
   });
 
   it('should be define', function() {
-    expect(gcmTest).to.not.be.undefined();
+    expect(gcmTest).to.not.be.undefined;
   });
 });
 
